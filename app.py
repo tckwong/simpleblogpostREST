@@ -104,7 +104,7 @@ def updatePost():
     try:
         (conn, cursor) = connectDB()
         data = request.json
-        client_id = data.get('id')
+        client_id = int(data.get('id'))
         client_content = data.get('content')
 
         if (client_content is not None):
@@ -137,7 +137,7 @@ def deletePost():
     try:
         (conn, cursor) = connectDB()
         data = request.json
-        client_id = data.get('id')
+        client_id = int(data.get('id'))
 
         if (client_id is not None):
             resp = {
